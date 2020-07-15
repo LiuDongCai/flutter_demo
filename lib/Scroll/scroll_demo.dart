@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/Scroll/customview/customscrollview_demo.dart';
+import 'package:flutterapp/Scroll/gridview/gridview_demo.dart';
+import 'package:flutterapp/Scroll/listview/listview_demo.dart';
+import 'package:flutterapp/Scroll/scrolcontroller/controller_demo.dart';
+import 'package:flutterapp/Scroll/scrollview/scrollview_demo.dart';
 import 'package:flutterapp/count/count_num_demo.dart';
 import 'package:flutterapp/widget/image/image_demo.dart';
 import 'package:flutterapp/widget/progress/progress_demo.dart';
@@ -8,13 +13,13 @@ import 'file:///D:/flutter/flutter_app/lib/widget/button/button_demo.dart';
 import 'package:flutterapp/widget/text/text_demo.dart';
 
 ///组件demo
-class WidgetTestRoute extends StatelessWidget{
+class ScrollTestRoute extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("基础组件demo"),
+        title: Text("可滚动demo"),
       ),
       body: Center(
         //Column的作用是将其所有子组件沿屏幕垂直方向依次排列
@@ -23,67 +28,56 @@ class WidgetTestRoute extends StatelessWidget{
           children: <Widget>[
 
             RaisedButton(
-              child: Text("文本"),
-              textColor: Colors.blue,
+              child: Text("SingleChildScrollView"),
+              textColor: Colors.orange,
               onPressed: (){
-                //点击事件,跳转计数器
+                //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return TextTestRoute();
+                  return ScrollViewTestRoute();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("按钮"),
-              textColor: Colors.blue,
+              child: Text("ListView"),
+              textColor: Colors.orange,
               onPressed: (){
-                //点击事件,跳转计数器
+                //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ButtonTestRoute();
+                  return InfiniteListView();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("图片"),
-              textColor: Colors.blue,
+              child: Text("GridView"),
+              textColor: Colors.orange,
               onPressed: (){
-                //点击事件,跳转计数器
+                //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ImageTestRoute();
+                  return InfiniteGridView();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("单选框/复选框"),
-              textColor: Colors.blue,
+              child: Text("CustomScrollView"),
+              textColor: Colors.orange,
               onPressed: (){
-                //点击事件,跳转计数器
+                //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return SwitchTestRoute();
+                  return CustomScrollViewTestRoute();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("输入框/表单"),
-              textColor: Colors.blue,
+              child: Text("ScrollController"),
+              textColor: Colors.orange,
               onPressed: (){
-                //点击事件,跳转计数器
+                //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return FormFieldTestRoute();
-                }));
-              },
-            ),
-
-            RaisedButton(
-              child: Text("进度条"),
-              textColor: Colors.blue,
-              onPressed: (){
-                //点击事件,跳转计数器
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ProgressTestRoute();
+                  return ScrollControllerTestRoute();
                 }));
               },
             ),

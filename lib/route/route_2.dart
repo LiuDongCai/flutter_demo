@@ -27,6 +27,7 @@ class Router2Route extends StatelessWidget{
                   Navigator.pop(context,"我是返回值");
                 },
                 child: Text("返回"),
+                textColor: Colors.green,
               ),
             ],
           ),

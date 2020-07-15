@@ -31,6 +31,7 @@ class RouterTestRoute extends StatelessWidget{
 //            print("结果：路由返回值:$result");
           },
           child: Text("打开提示页"),
+          textColor: Colors.green,
         ),
       ),
     );

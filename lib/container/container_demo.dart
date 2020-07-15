@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/count/count_num_demo.dart';
-import 'package:flutterapp/widget/image/image_demo.dart';
-import 'package:flutterapp/widget/progress/progress_demo.dart';
-import 'package:flutterapp/widget/switch/switch_demo.dart';
-import 'file:///D:/flutter/flutter_app/lib/widget/form/form_demo.dart';
-import 'file:///D:/flutter/flutter_app/lib/widget/button/button_demo.dart';
-import 'package:flutterapp/widget/text/text_demo.dart';
+import 'package:flutterapp/container/box/box_demo.dart';
+import 'package:flutterapp/container/clip/clip_demo.dart';
+import 'package:flutterapp/container/container/contain_demo.dart';
+import 'package:flutterapp/container/decorated/decoratedbox_demo.dart';
+import 'package:flutterapp/container/padding/padding_demo.dart';
+import 'package:flutterapp/container/tab/tab_demo.dart';
+import 'package:flutterapp/container/transform/transform_demo.dart';
 
 ///组件demo
-class WidgetTestRoute extends StatelessWidget{
+class ContainerTestRoute extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("基础组件demo"),
+        title: Text("容器组件demo"),
       ),
       body: Center(
         //Column的作用是将其所有子组件沿屏幕垂直方向依次排列
@@ -23,70 +23,82 @@ class WidgetTestRoute extends StatelessWidget{
           children: <Widget>[
 
             RaisedButton(
-              child: Text("文本"),
-              textColor: Colors.blue,
+              child: Text("填充容器"),
+              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return TextTestRoute();
+                  return PaddingTestRoute();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("按钮"),
-              textColor: Colors.blue,
+              child: Text("尺寸限制容器"),
+              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ButtonTestRoute();
+                  return BoxTestRoute();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("图片"),
-              textColor: Colors.blue,
+              child: Text("装饰容器"),
+              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ImageTestRoute();
+                  return DecoratedBoxTestRoute();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("单选框/复选框"),
-              textColor: Colors.blue,
+              child: Text("变换"),
+              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return SwitchTestRoute();
+                  return TransformTestRoute();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("输入框/表单"),
-              textColor: Colors.blue,
+              child: Text("Container"),
+              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return FormFieldTestRoute();
+                  return ContainTestRoute();
                 }));
               },
             ),
 
             RaisedButton(
-              child: Text("进度条"),
-              textColor: Colors.blue,
+              child: Text("导航"),
+              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return ProgressTestRoute();
+                  return TabTestRoute();
                 }));
               },
             ),
+
+            RaisedButton(
+              child: Text("裁剪"),
+              textColor: Colors.purple,
+              onPressed: (){
+                //点击事件,跳转计数器
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return ClipTestRoute();
+                }));
+              },
+            ),
+
 
           ],
         ),

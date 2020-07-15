@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/Scroll/scroll_demo.dart';
+import 'package:flutterapp/container/container_demo.dart';
 import 'package:flutterapp/layout/layout_demo.dart';
 import 'file:///D:/flutter/flutter_app/lib/count/count_num_demo.dart';
 import 'package:flutterapp/route/route_2.dart';
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
         "route_page":(context) => RouterTestRoute(),
         "widget_page":(context) => WidgetTestRoute(),
         "layout_page":(context) => LayoutTestRoute(),
+        "container_page":(context) => ContainerTestRoute(),
+        "scroll_page":(context) => ScrollTestRoute(),
         "/":(context) => MyHomePage(title: 'ADDCN591'), //注册首页路由
 
         "tip2": (context){
@@ -114,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             RaisedButton(
               child: Text("布局组件demo"),
-              textColor: Colors.blue,
+              textColor: Colors.brown,
               onPressed: (){
                 //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -122,6 +126,32 @@ class _MyHomePageState extends State<MyHomePage> {
 //                }));
                 //命名路由
                 Navigator.pushNamed(context, "layout_page");
+              },
+            ),
+
+            RaisedButton(
+              child: Text("容器组件demo"),
+              textColor: Colors.purple,
+              onPressed: (){
+                //点击事件,跳转路由界面
+//                Navigator.push(context, MaterialPageRoute(builder: (context){
+//                  return RouterTestRoute();
+//                }));
+                //命名路由
+                Navigator.pushNamed(context, "container_page");
+              },
+            ),
+
+            RaisedButton(
+              child: Text("可滚动组件demo"),
+              textColor: Colors.orange,
+              onPressed: (){
+                //点击事件,跳转路由界面
+//                Navigator.push(context, MaterialPageRoute(builder: (context){
+//                  return RouterTestRoute();
+//                }));
+                //命名路由
+                Navigator.pushNamed(context, "scroll_page");
               },
             ),
 
