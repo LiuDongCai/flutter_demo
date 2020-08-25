@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Scroll/scroll_demo.dart';
 import 'package:flutterapp/container/container_demo.dart';
+import 'package:flutterapp/function/function_demo.dart';
 import 'package:flutterapp/layout/layout_demo.dart';
 import 'file:///D:/flutter/flutter_app/lib/count/count_num_demo.dart';
 import 'package:flutterapp/route/route_2.dart';
 import 'package:flutterapp/route/route_demo.dart';
 import 'package:flutterapp/widget/widget_demo.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   //应用入口
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
         "layout_page":(context) => LayoutTestRoute(),
         "container_page":(context) => ContainerTestRoute(),
         "scroll_page":(context) => ScrollTestRoute(),
+        "function_page":(context) => FunctionTestRoute(),
         "/":(context) => MyHomePage(title: 'ADDCN591'), //注册首页路由
 
         "tip2": (context){
@@ -51,6 +54,7 @@ class MyApp extends StatelessWidget {
 
 ///MyHomePage 是Flutter应用的首页
 class MyHomePage extends StatefulWidget {
+
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
@@ -61,105 +65,136 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  DateTime _lastPressedAt; //上次点击时间
+
   @override
   Widget build(BuildContext context) {
 
-    //Scaffold 是 Material 库中提供的页面脚手架，它提供了默认的导航栏、标题和包含主屏幕widget树（后同“组件树”或“部件树”）的body属性，组件树可以很复杂
-    return Scaffold(
-      appBar: AppBar(
+    return WillPopScope(
 
-        title: Text(widget.title),
-      ),
+      onWillPop: () async {
+        if (_lastPressedAt == null ||
+            DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)) {
+          //两次点击间隔超过1秒则重新计时
+          Fluttertoast.showToast(msg: "再次点击退出程序");
+          _lastPressedAt = DateTime.now();
+          return false;
+        }
+        return true;
+      },
 
-      //Center 可以将其子组件树对齐到屏幕中心
-      body: Center(
 
-        //Column的作用是将其所有子组件沿屏幕垂直方向依次排列
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+      //Scaffold 是 Material 库中提供的页面脚手架，它提供了默认的导航栏、标题和包含主屏幕widget树（后同“组件树”或“部件树”）的body属性，组件树可以很复杂
+        child: Scaffold(
+          appBar: AppBar(
 
-            RaisedButton(
-              child: Text("计数器demo"),
-              textColor: Colors.red,
-              onPressed: (){
-                //点击事件,跳转计数器
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return MyCountNumPage();
-                }));
-              },
-            ),
+            title: Text(widget.title),
+          ),
 
-            RaisedButton(
-              child: Text("路由demo"),
-              textColor: Colors.green,
-              onPressed: (){
-                //点击事件,跳转路由界面
+          //Center 可以将其子组件树对齐到屏幕中心
+          body: Center(
+
+            //Column的作用是将其所有子组件沿屏幕垂直方向依次排列
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+
+                RaisedButton(
+                  child: Text("计数器demo"),
+                  textColor: Colors.red,
+                  onPressed: (){
+                    //点击事件,跳转计数器
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return MyCountNumPage();
+                    }));
+                  },
+                ),
+
+                RaisedButton(
+                  child: Text("路由demo"),
+                  textColor: Colors.green,
+                  onPressed: (){
+                    //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
 //                  return RouterTestRoute();
 //                }));
-                //命名路由
-                Navigator.pushNamed(context, "route_page");
-              },
-            ),
+                    //命名路由
+                    Navigator.pushNamed(context, "route_page");
+                  },
+                ),
 
-            RaisedButton(
-              child: Text("基础组件demo"),
-              textColor: Colors.blue,
-              onPressed: (){
-                //点击事件,跳转路由界面
+                RaisedButton(
+                  child: Text("基础组件demo"),
+                  textColor: Colors.blue,
+                  onPressed: (){
+                    //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
 //                  return RouterTestRoute();
 //                }));
-                //命名路由
-                Navigator.pushNamed(context, "widget_page");
-              },
-            ),
+                    //命名路由
+                    Navigator.pushNamed(context, "widget_page");
+                  },
+                ),
 
-            RaisedButton(
-              child: Text("布局组件demo"),
-              textColor: Colors.brown,
-              onPressed: (){
-                //点击事件,跳转路由界面
+                RaisedButton(
+                  child: Text("布局组件demo"),
+                  textColor: Colors.brown,
+                  onPressed: (){
+                    //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
 //                  return RouterTestRoute();
 //                }));
-                //命名路由
-                Navigator.pushNamed(context, "layout_page");
-              },
-            ),
+                    //命名路由
+                    Navigator.pushNamed(context, "layout_page");
+                  },
+                ),
 
-            RaisedButton(
-              child: Text("容器组件demo"),
-              textColor: Colors.purple,
-              onPressed: (){
-                //点击事件,跳转路由界面
+                RaisedButton(
+                  child: Text("容器组件demo"),
+                  textColor: Colors.purple,
+                  onPressed: (){
+                    //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
 //                  return RouterTestRoute();
 //                }));
-                //命名路由
-                Navigator.pushNamed(context, "container_page");
-              },
-            ),
+                    //命名路由
+                    Navigator.pushNamed(context, "container_page");
+                  },
+                ),
 
-            RaisedButton(
-              child: Text("可滚动组件demo"),
-              textColor: Colors.orange,
-              onPressed: (){
-                //点击事件,跳转路由界面
+                RaisedButton(
+                  child: Text("可滚动组件demo"),
+                  textColor: Colors.orange,
+                  onPressed: (){
+                    //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
 //                  return RouterTestRoute();
 //                }));
-                //命名路由
-                Navigator.pushNamed(context, "scroll_page");
-              },
+                    //命名路由
+                    Navigator.pushNamed(context, "scroll_page");
+                  },
+                ),
+
+                RaisedButton(
+                  child: Text("功能型组件demo"),
+                  textColor: Colors.pink,
+                  onPressed: (){
+                    //点击事件,跳转路由界面
+//                Navigator.push(context, MaterialPageRoute(builder: (context){
+//                  return RouterTestRoute();
+//                }));
+                    //命名路由
+                    Navigator.pushNamed(context, "function_page");
+                  },
+                ),
+
+
+              ],
             ),
+          ),
 
-
-          ],
         ),
-      ),
-
     );
+
   }
 }
