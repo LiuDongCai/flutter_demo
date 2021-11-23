@@ -14,7 +14,7 @@ class  _TabRouteState extends State<TabTestRoute> with SingleTickerProviderState
 
   int _selectedIndex = 0;
 
-  TabController _tabController; //需要定义一个Controller
+  TabController? _tabController; //需要定义一个Controller
   List tabs = ["科技", "军事", "娱乐", "体育"];
 
   @override
@@ -94,9 +94,9 @@ class  _TabRouteState extends State<TabTestRoute> with SingleTickerProviderState
         shape: CircularNotchedRectangle(),
         child: Row(
           children: [
-            IconButton(icon: Icon(Icons.home)),
+            IconButton(icon: Icon(Icons.home), onPressed: () {  },),
             SizedBox(), //中间位置空出
-            IconButton(icon: Icon(Icons.business)),
+            IconButton(icon: Icon(Icons.business), onPressed: () {  },),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceAround, //均分底部导航栏横向空间
         ),
@@ -135,7 +135,7 @@ class  _TabRouteState extends State<TabTestRoute> with SingleTickerProviderState
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

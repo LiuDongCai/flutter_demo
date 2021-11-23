@@ -44,7 +44,7 @@ class  _SwitchCheckBoxRouteState extends State<SwitchTestRoute>{
                 onChanged: (value){
                   //重新构建页面
                   setState(() {
-                    _checkboxSelected = value;
+                    _checkboxSelected = value!;
                   });
                 }),
 

@@ -16,9 +16,9 @@ class MyCountNumPage extends StatelessWidget {
 
 
 class CountNumPage extends StatefulWidget {
-  CountNumPage({Key key, this.title}) : super(key: key);
+  CountNumPage({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   _CountNumState createState() => _CountNumState();
@@ -41,7 +41,7 @@ class _CountNumState extends State<CountNumPage> {
     return Scaffold(
       appBar: AppBar(
 
-        title: Text(widget.title),
+        title: Text(widget.title!),
       ),
 
       //Center 可以将其子组件树对齐到屏幕中心

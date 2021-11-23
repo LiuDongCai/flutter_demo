@@ -14,7 +14,7 @@ class __TestWidgetState extends State<TestWidget> {
   Widget build(BuildContext context) {
     //使用InheritedWidget中的共享数据
     return Text(ShareDataWidget
-        .of(context)
+        .of(context)!
         .data
         .toString());
   }

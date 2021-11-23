@@ -10,6 +10,7 @@ class ThemeTestRoute extends StatefulWidget {
 class _ThemeTestRouteState extends State<ThemeTestRoute> {
 
   Color _themeColor = Colors.teal; //当前路由主题色
+  MaterialColor _themeColor2 = Colors.teal; //当前路由主题色
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class _ThemeTestRouteState extends State<ThemeTestRoute> {
     return Theme(
 
       data: ThemeData(
-          primarySwatch: _themeColor, //用于导航栏、FloatingActionButton的背景色等
+          primarySwatch: _themeColor2, //用于导航栏、FloatingActionButton的背景色等
           iconTheme: IconThemeData(color: _themeColor) //用于Icon颜色
       ),
 

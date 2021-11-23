@@ -12,14 +12,14 @@ class ProgressTestRoute extends StatefulWidget{
 
 class  _ProgressCheckBoxRouteState extends State<ProgressTestRoute> with SingleTickerProviderStateMixin{
 
-  AnimationController _animationController ;
+  AnimationController? _animationController ;
 
   @override
   void initState() {
     //动画执行时间3秒
     _animationController = new AnimationController(vsync: this,duration: Duration(seconds: 3));
-    _animationController.forward();
-    _animationController.addListener(() {
+    _animationController?.forward();
+    _animationController?.addListener(() {
       setState(() {
 
       });
@@ -29,7 +29,7 @@ class  _ProgressCheckBoxRouteState extends State<ProgressTestRoute> with SingleT
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController?.dispose();
     super.dispose();
   }
 
@@ -91,8 +91,8 @@ class  _ProgressCheckBoxRouteState extends State<ProgressTestRoute> with SingleT
             child: LinearProgressIndicator(
               backgroundColor: Colors.grey[200],
               valueColor: ColorTween(begin: Colors.grey, end: Colors.blue)
-                  .animate(_animationController), // 从灰色变成蓝色
-              value: _animationController.value,
+                  .animate(_animationController!), // 从灰色变成蓝色
+              value: _animationController?.value,
             ),
           ),
 

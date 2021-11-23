@@ -17,7 +17,7 @@ class DecoratedBoxTestRoute extends StatelessWidget{
             DecoratedBox(
               decoration: BoxDecoration(
                 //背景渐变
-                gradient: LinearGradient(colors: [Colors.red,Colors.orange[700],Colors.red]),
+                gradient: LinearGradient(colors: [Colors.red,Colors.orange,Colors.red]),
                 //圆角
                 borderRadius: BorderRadius.circular(3.0),
                 //阴影

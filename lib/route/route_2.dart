@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 ///路由展示demo
 class Router2Route extends StatelessWidget{
 
-  final String text;
+  final String? text;
 
   Router2Route({
-    Key key,
+    Key? key,
     @required this.text,
   }):super(key:key);
 
@@ -21,7 +21,7 @@ class Router2Route extends StatelessWidget{
         child: Center(
           child: Column(
             children: [
-              Text(text),
+              Text(text!),
               RaisedButton(
                 onPressed: (){
                   Navigator.pop(context,"我是返回值");

@@ -1,15 +1,23 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Scroll/scroll_demo.dart';
 import 'package:flutterapp/container/container_demo.dart';
 import 'package:flutterapp/function/function_demo.dart';
 import 'package:flutterapp/layout/layout_demo.dart';
+import 'package:flutterapp/map/map_demo.dart';
 import 'file:///D:/flutter/flutter_app/lib/count/count_num_demo.dart';
 import 'package:flutterapp/route/route_2.dart';
 import 'package:flutterapp/route/route_demo.dart';
 import 'package:flutterapp/widget/widget_demo.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
+
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    AndroidGoogleMapsFlutter.useAndroidViewSurface = true;
+  }
+
   //应用入口
   runApp(MyApp());
 }
@@ -40,11 +48,12 @@ class MyApp extends StatelessWidget {
         "container_page":(context) => ContainerTestRoute(),
         "scroll_page":(context) => ScrollTestRoute(),
         "function_page":(context) => FunctionTestRoute(),
+        "map_page":(context) => MapTestRoute(),
         "/":(context) => MyHomePage(title: 'ADDCN591'), //注册首页路由
 
-        "tip2": (context){
-          return Router2Route(text: ModalRoute.of(context).settings.arguments);
-        },
+        // "tip2": (context){
+        //   return Router2Route(text: ModalRoute.of(context)!.settings!.arguments);
+        // },
       },
 
 
@@ -55,9 +64,9 @@ class MyApp extends StatelessWidget {
 ///MyHomePage 是Flutter应用的首页
 class MyHomePage extends StatefulWidget {
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -65,7 +74,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  DateTime _lastPressedAt; //上次点击时间
+  DateTime? _lastPressedAt; //上次点击时间
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       onWillPop: () async {
         if (_lastPressedAt == null ||
-            DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)) {
+            DateTime.now().difference(_lastPressedAt!) > Duration(seconds: 1)) {
           //两次点击间隔超过1秒则重新计时
           Fluttertoast.showToast(msg: "再次点击退出程序");
           _lastPressedAt = DateTime.now();
@@ -88,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Scaffold(
           appBar: AppBar(
 
-            title: Text(widget.title),
+            title: Text(widget.title!),
           ),
 
           //Center 可以将其子组件树对齐到屏幕中心
@@ -185,6 +194,19 @@ class _MyHomePageState extends State<MyHomePage> {
 //                }));
                     //命名路由
                     Navigator.pushNamed(context, "function_page");
+                  },
+                ),
+
+                RaisedButton(
+                  child: Text("地图组件demo"),
+                  textColor: Colors.pink,
+                  onPressed: (){
+                    //点击事件,跳转路由界面
+//                Navigator.push(context, MaterialPageRoute(builder: (context){
+//                  return RouterTestRoute();
+//                }));
+                    //命名路由
+                    Navigator.pushNamed(context, "map_page");
                   },
                 ),
 
