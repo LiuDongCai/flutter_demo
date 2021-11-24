@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/count/count_num_demo.dart';
 import 'package:flutterapp/map/animate_camera.dart';
 import 'package:flutterapp/map/lit_mode.dart';
 import 'package:flutterapp/map/map_click.dart';
@@ -16,12 +15,6 @@ import 'package:flutterapp/map/place_polyline.dart';
 import 'package:flutterapp/map/scrolling_map.dart';
 import 'package:flutterapp/map/snapshot.dart';
 import 'package:flutterapp/map/tile_overlay.dart';
-import 'package:flutterapp/widget/image/image_demo.dart';
-import 'package:flutterapp/widget/progress/progress_demo.dart';
-import 'package:flutterapp/widget/switch/switch_demo.dart';
-import 'file:///D:/flutter/flutter_app/lib/widget/form/form_demo.dart';
-import 'file:///D:/flutter/flutter_app/lib/widget/button/button_demo.dart';
-import 'package:flutterapp/widget/text/text_demo.dart';
 
 ///组件demo
 class MapTestRoute extends StatelessWidget{

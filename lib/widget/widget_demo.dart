@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/count/count_num_demo.dart';
+import 'package:flutterapp/widget/button/button_demo.dart';
+import 'package:flutterapp/widget/form/form_demo.dart';
 import 'package:flutterapp/widget/image/image_demo.dart';
 import 'package:flutterapp/widget/progress/progress_demo.dart';
 import 'package:flutterapp/widget/switch/switch_demo.dart';
-import 'file:///D:/flutter/flutter_app/lib/widget/form/form_demo.dart';
-import 'file:///D:/flutter/flutter_app/lib/widget/button/button_demo.dart';
 import 'package:flutterapp/widget/text/text_demo.dart';
 
 ///组件demo
