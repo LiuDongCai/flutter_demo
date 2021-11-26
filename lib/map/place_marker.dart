@@ -34,7 +34,7 @@ typedef MarkerUpdateAction = Marker Function(Marker marker);
 
 class PlaceMarkerBodyState extends State<PlaceMarkerBody> {
   PlaceMarkerBodyState();
-  static final LatLng center = const LatLng(-33.86711, 151.1947171);
+  static final LatLng center = const LatLng(25.067207,121.5266216);
 
   GoogleMapController? controller;
   Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
@@ -298,7 +298,7 @@ class PlaceMarkerBodyState extends State<PlaceMarkerBody> {
             child: GoogleMap(
               onMapCreated: _onMapCreated,
               initialCameraPosition: const CameraPosition(
-                target: LatLng(-33.852, 151.211),
+                target: LatLng(25.067207,121.5266216),
                 zoom: 11.0,
               ),
               markers: Set<Marker>.of(markers.values),

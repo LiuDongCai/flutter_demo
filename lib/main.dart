@@ -198,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 RaisedButton(
                   child: Text("地图组件demo"),
-                  textColor: Colors.pink,
+                  textColor: Colors.amber,
                   onPressed: (){
                     //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
