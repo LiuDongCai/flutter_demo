@@ -26,3 +26,5 @@ dev_dependencies:
 #flutter相关的配置选项。
 flutter:
   uses-material-design: true
+  assets:
+    - assets/
