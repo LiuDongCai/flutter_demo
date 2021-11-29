@@ -12,6 +12,7 @@ import 'dart:ui';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'page.dart';
@@ -133,6 +134,7 @@ class PlaceMarkerBodyState extends State<PlaceMarkerBody> {
 
       // icon: BitmapDescriptor.fromBytes(markerIcon),
       icon: await getMarkerIcon("assets/ic_article_disadvantage.png", Size(150.0, 150.0)),
+      // icon: BitmapDescriptor.fromBytes(await getBytesFromAsset("assets/ic_article_disadvantage.png", 150)),
 
       infoWindow: InfoWindow(title: markerIdVal, snippet: '*'),
       onTap: () => _onMarkerTapped(markerId),
@@ -143,6 +145,16 @@ class PlaceMarkerBodyState extends State<PlaceMarkerBody> {
     setState(() {
       markers[markerId] = marker;
     });
+  }
+
+  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ImageByteFormat.png))
+        !.buffer
+        .asUint8List();
   }
 
   Future<Uint8List> getBytesFromCanvas(int width, int height) async  {
@@ -286,18 +298,11 @@ class PlaceMarkerBodyState extends State<PlaceMarkerBody> {
     return BitmapDescriptor.fromBytes(uint8List);
   }
 
-  Future<ui.Image> getImageFromPath(String imagePath) async {
-    File imageFile = File(imagePath);
-    print(imageFile);
-    Uint8List imageBytes = imageFile.readAsBytesSync();
-
-    final Completer<ui.Image> completer = new Completer();
-
-    ui.decodeImageFromList(imageBytes, (ui.Image img) {
-      return completer.complete(img);
-    });
-
-    return completer.future;
+  Future<ui.Image> getImageFromPath(String asset,{width,height}) async {
+    ByteData data = await rootBundle.load(asset);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(), targetWidth: width,targetHeight: height);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return fi.image;
   }
 
   void _remove(MarkerId markerId) {
