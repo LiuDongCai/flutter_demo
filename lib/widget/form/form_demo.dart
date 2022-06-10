@@ -78,7 +78,7 @@ class _FormTestRouteState  extends State<FormFieldTestRoute>{
           //设置globalKey，用于后面获取FormState
           key: _formKey,
           //开启自动校验
-          autovalidate: true,
+          // autovalidate: true,
 
           //Column的作用是将其所有子组件沿屏幕垂直方向依次排列
           child: Column(

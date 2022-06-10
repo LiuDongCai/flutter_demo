@@ -292,7 +292,7 @@ class PlaceMarkerBodyState extends State<PlaceMarkerBody> {
     );
 
     // Convert image to bytes
-    final ByteData? byteData = await markerAsImage!.toByteData(format: ui.ImageByteFormat.png);
+    final ByteData? byteData = await markerAsImage.toByteData(format: ui.ImageByteFormat.png);
     final Uint8List uint8List = byteData!.buffer.asUint8List();
 
     return BitmapDescriptor.fromBytes(uint8List);
