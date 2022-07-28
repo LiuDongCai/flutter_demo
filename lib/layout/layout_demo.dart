@@ -20,9 +20,8 @@ class LayoutTestRoute extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("线性布局"),
-              textColor: Colors.brown,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -31,9 +30,8 @@ class LayoutTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("弹性布局"),
-              textColor: Colors.brown,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -42,9 +40,8 @@ class LayoutTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("流式布局"),
-              textColor: Colors.brown,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -53,9 +50,8 @@ class LayoutTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("层叠布局"),
-              textColor: Colors.brown,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -64,9 +60,8 @@ class LayoutTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("对齐与相对定位"),
-              textColor: Colors.brown,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){

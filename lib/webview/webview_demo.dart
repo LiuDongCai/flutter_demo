@@ -19,9 +19,10 @@ class _WebViewPageState extends State<WebViewTestRoute> {
 
   @override
   Widget build(BuildContext context) {
+    WebView.platform = AndroidWebView();
     return Scaffold(
       appBar: AppBar(
-        title: Text("路由demo"),
+        title: Text("WebView demo"),
       ),
       body: Column(
         children: [
@@ -49,6 +50,7 @@ class _WebViewPageState extends State<WebViewTestRoute> {
           ),
           Expanded(
             child: WebView(
+                // initialUrl: 'https://m.591.com.tw/v2/news/article/607',
                 initialUrl: '',
                 javascriptMode: JavascriptMode.unrestricted,
                 onWebViewCreated: (WebViewController webViewController) {
@@ -57,7 +59,7 @@ class _WebViewPageState extends State<WebViewTestRoute> {
                 },
                 javascriptChannels: {
                   JavascriptChannel(
-                      name: "toast",
+                      name: "appWebAction",
                       onMessageReceived: (message) {
                         String result = message.message;
                         Fluttertoast.showToast(msg: result);

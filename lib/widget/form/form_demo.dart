@@ -130,11 +130,8 @@ class _FormTestRouteState  extends State<FormFieldTestRoute>{
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      child: RaisedButton(
-                        padding: EdgeInsets.all(15.0),
+                      child: ElevatedButton(
                         child: Text("登录"),
-                        color: Theme.of(context).primaryColor,
-                        textColor: Colors.white,
                         onPressed: (){
                           //在这里不能通过此方式获取FormState，context不对
                           //print(Form.of(context));

@@ -21,9 +21,8 @@ class WidgetTestRoute extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("文本"),
-              textColor: Colors.blue,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -32,9 +31,8 @@ class WidgetTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("按钮"),
-              textColor: Colors.blue,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -43,9 +41,8 @@ class WidgetTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("图片"),
-              textColor: Colors.blue,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -54,9 +51,8 @@ class WidgetTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("单选框/复选框"),
-              textColor: Colors.blue,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -65,9 +61,8 @@ class WidgetTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("输入框/表单"),
-              textColor: Colors.blue,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -76,9 +71,8 @@ class WidgetTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("进度条"),
-              textColor: Colors.blue,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){

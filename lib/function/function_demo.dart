@@ -22,9 +22,8 @@ class FunctionTestRoute extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("数据共享"),
-              textColor: Colors.pink,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -33,9 +32,8 @@ class FunctionTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("颜色和主题"),
-              textColor: Colors.pink,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){

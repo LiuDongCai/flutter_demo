@@ -22,12 +22,11 @@ class Router2Route extends StatelessWidget{
           child: Column(
             children: [
               Text(text!),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: (){
                   Navigator.pop(context,"我是返回值");
                 },
                 child: Text("返回"),
-                textColor: Colors.green,
               ),
             ],
           ),

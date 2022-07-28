@@ -10,7 +10,7 @@ class RouterTestRoute extends StatelessWidget{
         title: Text("路由demo"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () async{
             //点击事件  打开一个路由页，并等待返回结果
 //            var result = await Navigator.push(
@@ -31,7 +31,6 @@ class RouterTestRoute extends StatelessWidget{
 //            print("结果：路由返回值:$result");
           },
           child: Text("打开提示页"),
-          textColor: Colors.green,
         ),
       ),
     );

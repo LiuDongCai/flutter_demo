@@ -98,9 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              RaisedButton(
-                child: Text("计数器demo"),
-                textColor: Colors.red,
+              ElevatedButton(
+                child: Text(
+                  "计数器demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转计数器
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -108,9 +109,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
                 },
               ),
-              RaisedButton(
-                child: Text("路由demo"),
-                textColor: Colors.green,
+              ElevatedButton(
+                child: Text(
+                  "路由demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -120,9 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "route_page");
                 },
               ),
-              RaisedButton(
-                child: Text("基础组件demo"),
-                textColor: Colors.blue,
+              ElevatedButton(
+                child: Text(
+                  "基础组件demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -132,9 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "widget_page");
                 },
               ),
-              RaisedButton(
-                child: Text("布局组件demo"),
-                textColor: Colors.brown,
+              ElevatedButton(
+                child: Text(
+                  "布局组件demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -144,9 +148,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "layout_page");
                 },
               ),
-              RaisedButton(
-                child: Text("容器组件demo"),
-                textColor: Colors.purple,
+              ElevatedButton(
+                child: Text(
+                  "容器组件demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -156,9 +161,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "container_page");
                 },
               ),
-              RaisedButton(
-                child: Text("可滚动组件demo"),
-                textColor: Colors.orange,
+              ElevatedButton(
+                child: Text(
+                  "可滚动组件demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -168,9 +174,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "scroll_page");
                 },
               ),
-              RaisedButton(
-                child: Text("功能型组件demo"),
-                textColor: Colors.pink,
+              ElevatedButton(
+                child: Text(
+                  "功能型组件demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -180,9 +187,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "function_page");
                 },
               ),
-              RaisedButton(
-                child: Text("地图组件demo"),
-                textColor: Colors.amber,
+              ElevatedButton(
+                child: Text(
+                  "地图组件demo",
+                ),
                 onPressed: () {
                   //点击事件,跳转路由界面
 //                Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -192,14 +200,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "map_page");
                 },
               ),
-              RaisedButton(
-                child: Text("WebView组件demo"),
-                textColor: Colors.deepOrange,
+              ElevatedButton(
+                child: Text(
+                  "WebView组件demo",
+                ),
+                // textColor: Colors.deepOrange,
                 onPressed: () {
-                  //点击事件,跳转路由界面
-//                Navigator.push(context, MaterialPageRoute(builder: (context){
-//                  return RouterTestRoute();
-//                }));
                   //命名路由
                   Navigator.pushNamed(context, "webview_page");
                 },

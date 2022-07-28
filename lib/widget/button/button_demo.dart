@@ -16,20 +16,20 @@ class ButtonTestRoute extends StatelessWidget{
           children: <Widget>[
 
             //默认带有阴影和灰色背景
-            RaisedButton(
-              child: Text("漂浮按钮RaisedButton"),
+            ElevatedButton(
+              child: Text("漂浮按钮ElevatedButton"),
               onPressed: (){},
             ),
 
             //默认背景透明并不带阴影。按下后，会有背景色
-            FlatButton(
+            TextButton(
               child: Text("扁平按钮FlatButton"),
               onPressed: (){},
             ),
 
             //默认有一个边框，不带阴影且背景透明
-            OutlineButton(
-              child: Text("OutlineButton"),
+            OutlinedButton(
+              child: Text("OutlinedButton"),
               onPressed: (){},
             ),
 
@@ -39,24 +39,11 @@ class ButtonTestRoute extends StatelessWidget{
               onPressed: (){},
             ),
 
-            RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.send), label: Text("漂浮按钮RaisedButton带图标")),
+            ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.send), label: Text("漂浮按钮ElevatedButton带图标")),
 
-            FlatButton.icon(onPressed: (){}, icon: Icon(Icons.add), label: Text("扁平按钮FlatButton带图标")),
+            TextButton.icon(onPressed: (){}, icon: Icon(Icons.add), label: Text("扁平按钮TextButton带图标")),
 
-            OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.info), label: Text("OutlineButton带图标")),
-
-            RaisedButton(
-              child: Text("自定义按钮"),
-              color: Colors.blue,
-              //按下去颜色
-              highlightColor: Colors.blue[700],
-              //指定按钮主题colorBrightness为Brightness.dark，这是为了保证按钮文字颜色为浅色
-              colorBrightness: Brightness.dark,
-              //水波纹颜色
-              splashColor: Colors.grey,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-              onPressed: (){},
-            )
+            OutlinedButton.icon(onPressed: (){}, icon: Icon(Icons.info), label: Text("OutlinedButton带图标")),
 
           ],
         ),

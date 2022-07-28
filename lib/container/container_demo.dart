@@ -22,9 +22,8 @@ class ContainerTestRoute extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("填充容器"),
-              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -33,9 +32,8 @@ class ContainerTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("尺寸限制容器"),
-              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -44,9 +42,8 @@ class ContainerTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("装饰容器"),
-              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -55,9 +52,8 @@ class ContainerTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("变换"),
-              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -66,9 +62,8 @@ class ContainerTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("Container"),
-              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -77,9 +72,8 @@ class ContainerTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("导航"),
-              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -88,9 +82,8 @@ class ContainerTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("裁剪"),
-              textColor: Colors.purple,
               onPressed: (){
                 //点击事件,跳转计数器
                 Navigator.push(context, MaterialPageRoute(builder: (context){

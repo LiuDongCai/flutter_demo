@@ -20,9 +20,8 @@ class ScrollTestRoute extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("SingleChildScrollView"),
-              textColor: Colors.orange,
               onPressed: (){
                 //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -31,9 +30,8 @@ class ScrollTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("ListView"),
-              textColor: Colors.orange,
               onPressed: (){
                 //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -42,9 +40,8 @@ class ScrollTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("GridView"),
-              textColor: Colors.orange,
               onPressed: (){
                 //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -53,9 +50,8 @@ class ScrollTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("CustomScrollView"),
-              textColor: Colors.orange,
               onPressed: (){
                 //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -64,9 +60,8 @@ class ScrollTestRoute extends StatelessWidget{
               },
             ),
 
-            RaisedButton(
+            ElevatedButton(
               child: Text("ScrollController"),
-              textColor: Colors.orange,
               onPressed: (){
                 //SingleChildScrollView
                 Navigator.push(context, MaterialPageRoute(builder: (context){
